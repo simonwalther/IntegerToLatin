@@ -13,6 +13,11 @@ class Converter
   THOUSANDS = ["", "M", "MM", "MMM", "MMMM"]
 
   def convert(number)
+    #### this method has for goal to convert numbers to roman numbers ###
+    # number variable is fill like that: [THOUSANDS][HUNDREDS][TENS][UNITS]
+    # eg: 1234 = ["M"]["CC"]["XXX"]["IV"]
+    # the number is return as a string
+
     number = number.reverse.split(//)
     roman_number = Array.new
 
@@ -34,6 +39,10 @@ class Converter
   end
 
   def verify(number)
+    #### this method has for goal to verify the input ###
+    # 1 raise an error if the numbers are over 5000
+    # 2 raise an error if there's non digit characters
+
     if number.to_i >= 5000
       raise "numbers shouldn't be over 4999"
     elsif number.split.any? { |val| /^\D/ =~ val } || number.split.empty?
