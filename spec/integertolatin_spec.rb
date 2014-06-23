@@ -8,7 +8,7 @@ end
 describe IntegerToLatin do
   subject { Test.new }
 
-  describe '#converter' do
+  describe '#convert' do
     describe 'should replace numbers by the right letters' do
       it 'units should be convert correctly' do
         result = subject.integer_to_latin("7")
